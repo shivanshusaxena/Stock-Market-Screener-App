@@ -1,0 +1,19 @@
+Symbol,Names,Price,Volume,PE_Ratio
+TCS,Tata Consultancy Services,3450,1200000,28.5
+INFY,Infosys,1580,950000,25.1
+RELIANCE,Reliance Industries,2400,1800000,22.7
+HDFCBANK,HDFC Bank,1550,800000,20.9
+ITC,ITC Limited,420,600000,17.5
+# Add more like this ⬇
+WIPRO,Wipro Ltd,580,700000,19.8
+...
+WIPRO,Wipro Ltd,650,700000,19.3
+HCLTECH,HCL Technologies,1350,650000,21.7
+L&T,Larsen & Toubro,2900,500000,24.2
+SBIN,State Bank of India,600,1100000,13.4
+BAJFINANCE,Bajaj Finance,7100,450000,34.8
+MARUTI,Maruti Suzuki,9700,300000,29.1
+SUNPHARMA,Sun Pharma,1150,250000,16.8
+ADANIENT,Adani Enterprises,3100,120000,37.2
+
+
