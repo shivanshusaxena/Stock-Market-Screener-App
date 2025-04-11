@@ -1,0 +1,79 @@
+/* Chatbot Toggle Button */
+#chatbot-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 14px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* Chatbot Window */
+#chatbot-window {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background-color: #222;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    z-index: 999;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+#chatbot-header {
+    background-color: #333;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+/* Messages */
+#chatbot-messages {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+.bot-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+/* Questions (Quick buttons) */
+#chatbot-questions {
+    padding: 10px;
+    border-top: 1px solid #444;
+    background-color: #111;
+}
+
+#chatbot-questions button {
+    margin: 5px 2px;
+    padding: 6px 10px;
+    border: none;
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#chatbot-questions button:hover {
+    background-color: #666;
+}
