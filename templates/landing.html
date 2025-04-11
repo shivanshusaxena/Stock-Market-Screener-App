@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Market Screener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #aaa;
+        }
+
+        a.button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        a.button:hover {
+            background-color: #45a049;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📈 Stock Market Screener</h1>
+    <p>Filter, Analyze, Export — your personal equity screener made simple.</p>
+    <a href="/screener" class="button">Launch Screener 🚀</a>
+
+
+<!-- Chatbot Toggle Button -->
+<div id="chatbot-toggle">💬</div>
+
+<!-- Chatbot Window -->
+<div id="chatbot-window">
+    <div id="chatbot-header">Ask Me Anything</div>
+    <div id="chatbot-messages">
+        <div class="bot-message">Hi! How can I help you today?</div>
+    </div>
+    <div id="chatbot-questions">
+        <button onclick="askBot('What is this app about?')">What is this app about?</button>
+        <button onclick="askBot('How to use screener?')">How to use screener?</button>
+        <button onclick="askBot('Can I export data?')">Can I export data?</button>
+    </div>
+</div>
+
+
+ <!-- Chatbot UI -->
+<div id="chatbot-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+    <button id="chatbot-toggle-button" style="background-color: #4CAF50; color: white; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 24px; cursor: pointer;">💬</button>
+
+    <div id="chatbot" style="display: none; width: 300px; height: 400px; background-color: white; color: black; border: 1px solid #ccc; border-radius: 10px; padding: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); overflow-y: auto;">
+        <h4 style="margin-bottom: 10px;">FAQ Bot</h4>
+        <ul style="list-style: none; padding: 0;">
+            <li><button class="faq-btn">What is this app about?</button></li>
+            <li><button class="faq-btn">How to use screener?</button></li>
+            <li><button class="faq-btn">Can I export data?</button></li>
+        </ul>
+        <div id="chatbot-response" style="margin-top: 10px; font-size: 14px;"></div>
+    </div>
+</div>
+
+<script>
+    // Toggle chatbot visibility
+    document.getElementById('chatbot-toggle-button').addEventListener('click', function () {
+        const chatbot = document.getElementById('chatbot');
+        chatbot.style.display = chatbot.style.display === 'none' ? 'block' : 'none';
+    });
+
+    // FAQ responses
+    const responses = {
+        "What is this app about?": "This app helps you filter, analyze, and export stock market data.",
+        "How to use screener?": "Just enter minimum values in the filter boxes and click Apply Filter.",
+        "Can I export data?": "Yes! Use the green 'Export to CSV' button on the main screener page."
+    };
+
+    // Handle button clicks
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.getElementById('chatbot-response').innerText = responses[btn.innerText];
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
